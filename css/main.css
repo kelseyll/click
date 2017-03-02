@@ -26,11 +26,13 @@ body {
     cursor: url(../images/sparkles.png), auto;
 }
 
-.nav .items-left a {
+.nav .items-left a,
+.nav .items-left span {
     padding-left: 30px;
 }
 
-.nav .items-right a {
+.nav .items-right a,
+.nav .items-right span {
     padding-right: 40px;
 }
 

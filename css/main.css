@@ -2,6 +2,8 @@ body {
     font-family: 'Rakkas';
 }
 
+/* Navigation Items */
+
 .nav {
     display: flex;
     width: 100%;
@@ -31,4 +33,15 @@ body {
 
 footer {
     bottom: 0;
+}
+
+/* Ads */
+.frame img {
+    border: white solid 1px;
+    cursor: pointer;
+}
+
+.frame img:hover {
+    border-color: red;
+    cursor: pointer;
 }

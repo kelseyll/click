@@ -6,8 +6,14 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    font-size: 40px;
+    font-size: 50px;
     padding: 20px 0;
+    letter-spacing: 0.4px;
+    position: fixed;
+}
+
+.nav .logo {
+    height: 40px;
 }
 
 .nav a {
@@ -20,5 +26,9 @@ body {
 }
 
 .nav .items-right a {
-    padding-right: 30px;
+    padding-right: 40px;
+}
+
+footer {
+    bottom: 0;
 }

@@ -1,5 +1,5 @@
 console.log("meossw");
-$("#hide").click(function(){
+$(document).click(function(){
     $(".frame").remove();
     console.log("click");
 });

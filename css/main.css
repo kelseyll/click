@@ -1,5 +1,6 @@
 body {
     font-family: 'Rakkas';
+    cursor: url(../images/cursor.png), auto;
 }
 
 /* Navigation Items */
@@ -9,7 +10,7 @@ body {
     width: 100%;
     justify-content: space-between;
     font-size: 50px;
-    padding: 20px 0;
+    padding: 20px 0 0;
     letter-spacing: 0.4px;
     position: fixed;
 }
@@ -19,8 +20,10 @@ body {
 }
 
 .nav a {
+    height: 30px;
     color: black;
     text-decoration: none;
+    cursor: url(../images/sparkles.png), auto;
 }
 
 .nav .items-left a {
@@ -43,5 +46,5 @@ footer {
 
 .frame img:hover {
     border-color: red;
-    cursor: pointer;
+    cursor: url(../images/hover.png), pointer;
 }

@@ -1,9 +1,9 @@
 console.log("meossw");
-$('#ad').click(function(){
-    $(this).find('.frame').remove();
+$('.ad').click(function(){
+    $(this).remove();
     console.log("click");
 });
 
-$('#ad').hover(function(){
+$('.ad').hover(function(){
     console.log("hover");
 });

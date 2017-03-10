@@ -50,3 +50,10 @@ footer {
     border-color: red;
     cursor: url(../images/hover.png), pointer;
 }
+
+/* Animations */
+.ad {
+    opacity: 3s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}

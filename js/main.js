@@ -1,6 +1,6 @@
 console.log("meossw");
 $('.ad').click(function(){
-    $(this).remove();
+    $(this).hide();
     console.log("click");
 });
 

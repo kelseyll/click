@@ -1,6 +1,8 @@
 console.log("meossw");
-$('.ad').click(function(){
-    $(this).hide();
+var width = $(".ad").width();
+$(".ad__popover").width(width);
+$('.frame-item').click(function(){
+    $(this).addClass("frame-item__hide");
     console.log("click");
 });
 

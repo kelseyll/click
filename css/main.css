@@ -1,10 +1,15 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+
+}
+
 body {
     font-family: 'Rakkas';
     cursor: url(../images/cursor.png), auto;
 }
 
 /* Navigation Items */
-
 .nav {
     display: flex;
     width: 100%;
@@ -13,6 +18,7 @@ body {
     padding: 20px 0 0;
     letter-spacing: 0.4px;
     position: fixed;
+    z-index: 22000000;
 }
 
 .nav .logo {
@@ -41,19 +47,52 @@ footer {
 }
 
 /* Ads */
-.frame img {
-    border: white solid 1px;
-    cursor: pointer;
+.frame {
+    display: flex;
+    flex-flow: wrap;
+    z-index: -1;
+    cursor: url(../images/pointer.png), auto;
 }
-
-.frame img:hover {
-    border-color: red;
+.frame-item {
+    border: white solid 1px;
+}
+.frame-item {
+    position: relative;
+    width: 25%;
+    transition: width .5s ease-in-out;
+}
+.frame-item__hide {
+    width: 0%;
+    height: 0%;
+    border: none !important;
+    z-index: 22;
+    pointer-events: none;
+}
+.frame-item__hide {
+    border: none;
+}
+.frame-item:hover {
+    border: 1px solid red;
     cursor: url(../images/hover.png), pointer;
 }
 
 /* Animations */
 .ad {
+    width: 100%;
     opacity: 3s;
-    -webkit-transition: .5s;
-    transition: .5s;
+    animation-fill-mode: backwards;
+}
+.ad__popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    transition: transform .5s ease-in-out, opacity .2s ease-in-out .3s;
+}
+.frame-item__hide .ad__popover {
+    transform: scale(1.4);
+    opacity: 0;
+    border: 1px solid red;
+    cursor: url(../images/cursor.png), auto;
 }

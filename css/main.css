@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     user-select: none;
-
 }
 
 body {
@@ -82,16 +81,19 @@ footer {
     opacity: 3s;
     animation-fill-mode: backwards;
 }
-.ad__popover {
+
+.ad:focus, .ad__popover:focus {
+    cursor: url(../images/hover.png), pointer;
+}
+
+.frame-item__hide .ad {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     pointer-events: none;
     transition: transform .5s ease-in-out, opacity .2s ease-in-out .3s;
-}
-.frame-item__hide .ad__popover {
-    transform: scale(1.4);
+    transform: scale(1.2);
     opacity: 0;
     border: 1px solid red;
     cursor: url(../images/cursor.png), auto;

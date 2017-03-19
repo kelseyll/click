@@ -3,9 +3,17 @@
     user-select: none;
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     font-family: 'Rakkas';
     cursor: url(../images/cursor.png), auto;
+}
+
+img {
+    margin-bottom: -7px;
 }
 
 /* Navigation Items */
@@ -14,7 +22,7 @@ body {
     width: 100%;
     justify-content: space-between;
     font-size: 50px;
-    padding: 20px 0 0;
+    padding: 0;
     letter-spacing: 0.4px;
     position: fixed;
     z-index: 22000000;
@@ -45,33 +53,42 @@ footer {
     bottom: 0;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 /* Ads */
 .frame {
+    padding-top: 120px;
+    width: 360px;
     display: flex;
     flex-flow: wrap;
-    z-index: -1;
     cursor: url(../images/pointer.png), auto;
 }
+
 .frame-item {
-    border: white solid 1px;
-}
-.frame-item {
+    margin-bottom: 20px;
+    border: white solid 5px;
     position: relative;
-    width: 25%;
-    transition: width .5s ease-in-out;
+    width: 100%;
+    transition: height .5s ease-in-out .3s;
 }
 .frame-item__hide {
-    width: 0%;
-    height: 0%;
+    height: 0% !important;
     border: none !important;
     z-index: 22;
+    pointer-events: none;
+    margin-bottom: 0;
+}
+.frame-item__dunclick {
     pointer-events: none;
 }
 .frame-item__hide {
     border: none;
 }
 .frame-item:hover {
-    border: 1px solid red;
+    border: 5px solid red;
     cursor: url(../images/hover.png), pointer;
 }
 
@@ -93,8 +110,8 @@ footer {
     width: 100%;
     pointer-events: none;
     transition: transform .5s ease-in-out, opacity .2s ease-in-out .3s;
-    transform: scale(1.2);
+    transform: scale(1.8);
     opacity: 0;
-    border: 1px solid red;
+    border: 5px solid red;
     cursor: url(../images/cursor.png), auto;
 }

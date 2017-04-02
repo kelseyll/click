@@ -4,8 +4,8 @@ $(document).ready(function () {
     // Kelsey Legault - Jan to April 2017
 
     // Get width of content for animation.
-    var width = $(".ad").width();
-    $(".ad").width(width);
+    // var width = $(".ad").width();
+    // $(".ad").width(width);
 
     $( ".frame-item" ).each(function( index ) {
         var height = $(this).height();

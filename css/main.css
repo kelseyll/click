@@ -34,7 +34,7 @@ img {
 
 .nav a {
     height: 30px;
-    color: #eee;
+    color: black;
     text-decoration: none;
     cursor: url(../images/sparkles.png), auto;
 }
@@ -91,11 +91,12 @@ footer {
     transform: scale(1.8);
     opacity: 0;
     border: 5px solid #eee;
+    margin-bottom: 0;
     cursor: url(../images/cursor.png), auto;
 }
 
 .frame-item__dunclick {
-    /*pointer-events: none;*/
+    pointer-events: none;
 }
 .frame-item__hide {
     border: none;
@@ -114,4 +115,28 @@ footer {
 
 .ad:focus, .ad__popover:focus {
     cursor: url(../images/hover.png), pointer;
+}
+
+/* HTML Ads */
+.window {
+    padding: 10px;
+    background-color: #F1C6EC;
+}
+
+.header {
+    background-color: red;
+}
+
+.header span:nth-child(2n),
+.action-panel a:nth-child(2n) {
+    float: right;
+}
+
+.content {
+    border: 1px solid #000;
+    background-color: #FFF;
+}
+
+.action-panel {
+    border: 1px solid blue;
 }

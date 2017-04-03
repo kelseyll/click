@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    font-family: 'Rakkas';
+    font-family: "HK Grotesk";
     /*cursor: url(../images/cursor.png), auto;*/
 }
 
@@ -76,12 +76,18 @@ footer {
 }
 .frame-item__hide {
     height: 0% !important;
-    border: none !important;
     z-index: 22;
     /*pointer-events: none;*/
     margin-bottom: 0;
 }
-.frame-item__hide .ad {
+.window {
+    padding: 10px;
+    background-color: pink;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.frame-item__hide .ad,
+.frame-item__hide .window {
     position: absolute;
     top: 0;
     left: 0;
@@ -90,7 +96,6 @@ footer {
     transition: transform .5s ease-in-out, opacity .2s ease-in-out .3s;
     transform: scale(1.8);
     opacity: 0;
-    border: 5px solid #eee;
     margin-bottom: 0;
     /*cursor: url(../images/cursor.png), auto;*/
 }
@@ -99,10 +104,10 @@ footer {
     pointer-events: none;
 }
 .frame-item__hide {
-    border: none;
+    /*border: none;*/
 }
 .frame-item:hover .window {
-    box-shadow: 4px 4px 0px pink;
+    box-shadow: 5px 5px 0px black;
     /*cursor: url(../images/hover.png), pointer;*/
 }
 
@@ -118,16 +123,11 @@ footer {
 }
 
 /* HTML Ads */
-.window {
-    padding: 10px;
-    background-color: pink;
-    box-shadow: 4px 4px 0px #000;
-}
-
 .header {
     background: linear-gradient( 45deg, white, pink );
-    padding: 0 8px;
+    padding: 8px;
     color: pink;
+    font-weight: 500;
 }
 
 .header span:nth-child(2n),
@@ -140,8 +140,12 @@ footer {
     padding: 10px;
     margin-bottom: 15px;
     box-shadow: inset 2px 2px 0px #000;
+    font-weight: 700;
 }
-
+.content span {
+    width: 100%;
+    display: block;
+}
 .action-panel {
     padding: 0 8px;
 }

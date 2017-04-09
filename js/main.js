@@ -46,9 +46,10 @@ $(document).ready(function () {
         if ( $(".share").hasClass( "sup" ) ) {
             $(".share").toggleClass("sup");
         }
-        // Hide other footer elements
         // Remove scroll
-        $("html, body").toggleClass("poop");
+        if ( $("html, body").hasClass( "overflow" ) ) {
+            $("html, body").toggleClass("overflow");
+        }
     });
 
     $(".share-button, .close-share").click(function(){
@@ -57,6 +58,8 @@ $(document).ready(function () {
              $(".description").toggleClass("sup");
          }
         // Remove scroll
-        $("html, body").toggleClass("poop");
+        if ( $("html, body").hasClass( "overflow" ) ) {
+            $("html, body").toggleClass("overflow");
+        }
     });
 });

@@ -3,10 +3,6 @@
     user-select: none;
 }
 
-html {
-    /*overflow: hidden;*/
-}
-
 body {
     font-family: "HK Grotesk";
     margin: 0;
@@ -207,7 +203,6 @@ footer a:hover {
     margin: 0 auto;
     position: relative;
     top: 25%;
-    /*padding: 0px;*/
     font-weight: 700;
 }
 
@@ -222,17 +217,14 @@ footer a:hover {
 
 .modal p {
     max-width: 450px;
-    margin: 50px auto 0;
+    margin: 50px auto;
     text-align: justify;
 }
 
 .overflow {
     overflow: hidden;
 }
-.activepoop {
-    display: block;
-    z-index: 2222;
-}
+
 .sup {
     display: block;
 }

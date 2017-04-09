@@ -42,24 +42,22 @@ $(document).ready(function () {
 
     // Modals
     $(".description-button, .close-description").click(function(){
+        $("html, body").toggleClass("overflow");
         $(".description").toggleClass("sup");
         if ( $(".share").hasClass( "sup" ) ) {
             $(".share").toggleClass("sup");
-        }
-        // Remove scroll
-        if ( $("html, body").hasClass( "overflow" ) ) {
+            // Handle scroll
             $("html, body").toggleClass("overflow");
         }
     });
 
     $(".share-button, .close-share").click(function(){
+        $("html, body").toggleClass("overflow");
         $(".share").toggleClass("sup");
          if ( $(".description").hasClass( "sup" ) ) {
              $(".description").toggleClass("sup");
+             // Handle scroll
+             $("html, body").toggleClass("overflow");
          }
-        // Remove scroll
-        if ( $("html, body").hasClass( "overflow" ) ) {
-            $("html, body").toggleClass("overflow");
-        }
     });
 });

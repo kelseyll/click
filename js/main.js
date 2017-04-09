@@ -7,13 +7,8 @@ $(document).ready(function () {
         $(this).height(height);
     });
     // Add animation on click.
-    $('.frame-item').click(function(){
-        $(this).addClass("frame-item__hide");
-        var nextitem = $(this).next();
-        nextitem.addClass("frame-item__dunclick");
-        setTimeout(function(){
-          nextitem.removeClass("frame-item__dunclick")
-        }, 500);
+    $('.closeparent').click(function(){
+        $(this).parent().parent().parent().addClass("frame-item__hide");
     });
 
     // Timer
@@ -45,11 +40,23 @@ $(document).ready(function () {
         $('.score').text(score);
     });
 
-    // Modal
-    $(".description").click(function(){
-        $(".modal-container").toggle();
-        $(".modal.description").toggle();
+    // Modals
+    $(".description-button, .close-description").click(function(){
+        $(".description").toggleClass("sup");
+        if ( $(".share").hasClass( "sup" ) ) {
+            $(".share").toggleClass("sup");
+        }
+        // Hide other footer elements
+        // Remove scroll
+        $("html, body").toggleClass("poop");
+    });
 
-        // $(this).find("span").text(XX);
+    $(".share-button, .close-share").click(function(){
+        $(".share").toggleClass("sup");
+         if ( $(".description").hasClass( "sup" ) ) {
+             $(".description").toggleClass("sup");
+         }
+        // Remove scroll
+        $("html, body").toggleClass("poop");
     });
 });

@@ -26,7 +26,7 @@ img {
     padding: 0;
     letter-spacing: 0.4px;
     position: fixed;
-    z-index: 22000000;
+    z-index: 999;
     font-weight: 700;
 }
 
@@ -53,6 +53,10 @@ img {
 
 footer {
     bottom: 0;
+}
+
+footer a:hover {
+    cursor: pointer;
 }
 
 .container {
@@ -85,6 +89,7 @@ footer {
     padding: 10px;
     background-color: pink;
     box-shadow: 4px 4px 0px #000;
+    border: 3px solid #000;
 }
 
 .frame-item__hide .ad,
@@ -139,7 +144,7 @@ footer {
     background-color: #FFF;
     padding: 10px;
     margin-bottom: 15px;
-    box-shadow: inset 2px 2px 0px #000;
+    box-shadow: inset 3px 3px 0px #000;
     font-weight: 700;
 }
 .content span {
@@ -177,14 +182,20 @@ footer {
 .modal-container {
     display: none;
     background-image: linear-gradient(to left, #a8edea 0%, #fed6e3 100%);
-    z-index: 2;
+    z-index: 99;
     position: fixed;
     height: 100%;
     width: 100%;
 }
 
-.modal {
+.modal-container.share,
+.modal-container.description,
+.modal-container.description .modal,
+.modal-container.share .modal, {
     display: none;
+}
+
+.modal {
     overflow-y: scroll;
     font-size: 20px;
     line-height: 32px;
@@ -196,12 +207,12 @@ footer {
     margin: 0 auto;
     position: relative;
     top: 25%;
-    padding: 10px;
+    /*padding: 0px;*/
     font-weight: 700;
 }
 
 .modal .header {
-    padding: 5px 12px;
+    padding: 5px 15px 8px 15px;
 }
 
 .modal h1 {
@@ -213,4 +224,15 @@ footer {
     max-width: 450px;
     margin: 50px auto 0;
     text-align: justify;
+}
+
+.poop {
+    overflow: hidden;
+}
+.activepoop {
+    display: block;
+    z-index: 2222;
+}
+.sup {
+    display: block;
 }

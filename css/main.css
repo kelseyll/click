@@ -9,6 +9,7 @@ html {
 
 body {
     font-family: "HK Grotesk";
+    margin: 0;
     /*cursor: url(../images/cursor.png), auto;*/
 }
 
@@ -26,6 +27,7 @@ img {
     letter-spacing: 0.4px;
     position: fixed;
     z-index: 22000000;
+    font-weight: 700;
 }
 
 .nav .logo {
@@ -69,7 +71,6 @@ footer {
 
 .frame-item {
     margin-bottom: 20px;
-    border: white solid 5px;
     position: relative;
     width: 100%;
     transition: height .5s ease-in-out .3s, margin-bottom .5s ease-in-out .3s;;
@@ -93,8 +94,7 @@ footer {
     left: 0;
     width: 100%;
     pointer-events: none;
-    transition: transform .5s ease-in-out, opacity .2s ease-in-out .3s;
-    transform: scale(1.8);
+    transition: transform .1s ease-in-out, opacity .1s ease-in-out .1s;
     opacity: 0;
     margin-bottom: 0;
     /*cursor: url(../images/cursor.png), auto;*/
@@ -106,8 +106,8 @@ footer {
 .frame-item__hide {
     /*border: none;*/
 }
-.frame-item:hover .window {
-    box-shadow: 5px 5px 0px black;
+.frame-item:hover {
+    transform: scale(1.02);
     /*cursor: url(../images/hover.png), pointer;*/
 }
 
@@ -131,7 +131,7 @@ footer {
 }
 
 .header span:nth-child(2n),
-.action-panel a:nth-child(2n) {
+.action-panel span:nth-child(2n) {
     float: right;
 }
 
@@ -150,10 +150,19 @@ footer {
     padding: 0 8px;
 }
 
-.action-panel a:hover img,
-.header span a:hover img {
-    transform: scale(1.1);
+.header span:nth-child(2n) {
+    transition: 0.2s;
+}
+
+.action-panel span:hover img,
+.header span:hover img {
+    transform: scale(1.2);
     /*cursor: url(../images/hover.png), pointer;*/
+}
+
+.action-panel span:hover,
+.header span:hover {
+    cursor: pointer;
 }
 
 .heart {
@@ -162,4 +171,46 @@ footer {
 
 .close-window {
     padding-bottom: 4px;
+}
+
+/* Modal */
+.modal-container {
+    display: none;
+    background-image: linear-gradient(to left, #a8edea 0%, #fed6e3 100%);
+    z-index: 2;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.modal {
+    display: none;
+    overflow-y: scroll;
+    font-size: 20px;
+    line-height: 32px;
+    max-width: 600px;
+    max-height: 450px;
+    background-color: white;
+    border: 5px solid #000;
+    box-shadow: 8px 8px 0px #000;
+    margin: 0 auto;
+    position: relative;
+    top: 25%;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.modal .header {
+    padding: 5px 12px;
+}
+
+.modal h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.modal p {
+    max-width: 450px;
+    margin: 50px auto 0;
+    text-align: justify;
 }

@@ -137,16 +137,23 @@ footer a:hover {
 }
 
 .content {
+    padding: 3px 0px 0 3px;
     background-color: #FFF;
-    padding: 10px;
     margin-bottom: 15px;
     box-shadow: inset 3px 3px 0px #000;
     font-weight: 700;
+    overflow: hidden;
 }
 .content span {
+    padding: 6px 8px;
     width: 100%;
     display: block;
 }
+
+.content img {
+    width: 100%;
+}
+
 .action-panel {
     padding: 0 8px;
 }

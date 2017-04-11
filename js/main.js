@@ -40,7 +40,7 @@ $(document).ready(function () {
         $(".modal-container__instructions").remove();
 
         // Timer
-        var sec = 4;
+        var sec = 30;
         var timer = setInterval(function() {
             if (sec > 9) {
             $('.timer').text("0:" + sec--);

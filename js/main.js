@@ -66,6 +66,8 @@ $(document).ready(function () {
         $(".like").click(function(){
             icu = icu + 1;
             $('.score').text(icu);
+            $(this).addClass("like-animation");
+            $(this).find("img").addClass("like-img-animation");
         });
         $(".heart").click(function(){
             icu = icu + 2;

@@ -14,6 +14,7 @@ img {
 
 /* Navigation Items */
 .nav {
+    background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -62,23 +63,27 @@ footer a:hover {
 /* Ads */
 .frame {
     padding-top: 120px;
-    width: 360px;
+    width: 380px;
     display: flex;
     flex-flow: wrap;
     /*cursor: url(../images/pointer.png), auto;*/
 }
 
 .frame-item {
+    padding: 0 10px 0;
     margin-bottom: 20px;
     position: relative;
     width: 100%;
-    transition: height .5s ease-in-out .3s, margin-bottom .5s ease-in-out .3s;
+    overflow: visible !important;
+    transition: margin-bottom .5s ease-in-out .3s,  opacity .5s ease-in-out 0s;
 }
 .frame-item__hide {
-    height: 0% !important;
     z-index: 22;
+    opacity: 0;
     /*pointer-events: none;*/
     margin-bottom: 0;
+    padding: 0 10px 0;
+    
 }
 .window {
     padding: 10px;
@@ -91,15 +96,13 @@ footer a:hover {
 .frame-item__hide .window {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 10px;
+    width: calc(100% - 20px);
     pointer-events: none;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out 0.3s;
-    opacity: 0;
-    margin-bottom: 0;
+    transition: opacity 0.3s ease-in-out 0.3s;
+    
     /*cursor: url(../images/cursor.png), auto;*/
 }
-
 .frame-item__dunclick {
     pointer-events: none;
 }
@@ -107,7 +110,7 @@ footer a:hover {
     /*border: none;*/
 }
 .frame-item:hover {
-    transform: scale(1.02);
+    /*transform: scale(1.02);*/
     /*cursor: url(../images/hover.png), pointer;*/
 }
 
@@ -203,6 +206,7 @@ footer a:hover {
 }
 
 .modal-container__instructions .start:hover,
+.modal-container.share .modal p:hover,
 .share-score:hover,
 .play-again:hover {
     cursor: pointer;
@@ -210,17 +214,24 @@ footer a:hover {
 }
 
 .modal-container__instructions .modal p,
-.modal-container__playagain .modal p {
+.modal-container__playagain .modal p,
+.modal-container.share .modal p {
     text-align: center;
 }
 
 .modal-container__instructions span,
-.modal-container__playagain span {
+.modal-container__playagain span,
+.modal-container.share .modal p a {
     background: linear-gradient( 300deg, pink, lightyellow );
     padding: 8px 16px;
     border: 3px solid #000;
     box-shadow: 4px 4px 0 #000;
     margin: 0 auto;
+}
+
+.modal-container.share .modal p a {
+    text-decoration: none;
+    color: #000;
 }
 
 .modal-container.share,
@@ -271,6 +282,7 @@ footer a:hover {
 }
 
 .loading-splash {
+    font-size: 30px;
     font-weight: 700;
     letter-spacing: 0.3px;
     background-color: pink;

@@ -65,6 +65,8 @@
     border: #000 3px solid;
     padding: 2px 8px;
     box-shadow: 4px 4px 0 #000;
+    z-index: 99;
+    opacity: 1;
 }
 
 .love-animation::before {

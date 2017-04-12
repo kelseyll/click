@@ -11,247 +11,486 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Rakkas" rel="stylesheet">
     <head>
-    <meta property="og:url"           content="http://likethestuff.com/" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Like the Stuff!" />
-    <meta property="og:description"   content="Like as much stuff before the timer runs out!" />
-    <meta property="og:image"         content="http://likethestuff.com/images/meta-image.png" />
-</head>
+        <meta property="og:url"           content="http://likethestuff.com/" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="Like the Stuff!" />
+        <meta property="og:description"   content="Like as much stuff before the timer runs out!" />
+        <meta property="og:image"         content="http://likethestuff.com/images/meta-image.png" />
+    </head>
 </head>
 <body>
-    <!-- <div class="loading-splash">
+    <!-- Facebook share js -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            // js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="loading-splash">
         <p>loading</p>
-    </div> -->
-    <div class="container">
-        <header class="nav">
-            <div class="items-left">
-                <a href=""><img class="logo" src="images/logo-1.svg" alt=""></a>
-            </div>
-            <div class="items-right">
-                <span class="timer">0:30</span>
-                <span class="score">0</span>
-            </div>
-        </header>
-        <div class="modal-container__instructions">
-            <div class="modal">
-                <h1>
-                    Like as much stuff as you can before the timer runs out!
-                </h1>
-                <p>
-                    If you accidentally like or love an advertisement, you lose points, so be careful what you like!
-                </p>
-                <p class="start"><span>👍 Start Liking! ❤️</span></p>
-            </div>
-        </div>
-        <div class="modal-container__playagain">
-            <div class="modal">
-                <h1>Time's up! You got <i class="end-score">3</i> points!</h1>
-                <p>
-                    You can do better, So can your friends!
-                </p>
-                <p class="share-score"><span>🌴 Share your score! 🌈</span></p>
-                <p class="play-again"><span>💰 Play Again! ⚡️</span></p>
-            </div>
-        </div>
-        <div class="modal-container description">
-            <div class="modal">
-                <div class="header">
-                    <span>????????????????????</span>
-                    <span><img class="close-window close-description" src="images/x.svg" alt="close window"></span>
-                </div>
-                <p>
-                    The objective of the game is to like as much content as possible. Loving content gets more points.
-                    If you like an advertisement, you lose points. If you love an advertisement, you lose more points.
-                    After the timer runs out, share your score with your friends! ✨
-                </p>
-                <p class="small">
-                    clickplease.net challenges the unquestioned integration of advertisements within social media feeds.
-                    These advertisements are formatted and designed exactly the same as the content that we subscribe to;
-                    this strategy is profitable, but also raises questions about this slippery slope.
-                </p>
-                <p>
-                    How successfully should sponsored material visually mimic the content that we subscribe to? Should
-                    platforms be required to add design elements  to advertisements in order to ensure they are visually
-                    different enough than the content we subscribe to? Where do we go from here?
-                </p>
-            </div>
-        </div>
-        <div class="modal-container share">
-            <div class="modal">
-                <div class="header">
-                    <span>Share 🌴 🌴</span>
-                    <span><img class="close-window close-share" src="images/x.svg" alt="close window"></span>
-                </div>
-                <p>
-                    <a target="_blank" class="twitter-share-button"
-                    href="https://twitter.com/intent/tweet?text=you%20should%20like%20the%20stuff%20at%20http://likethestuff.com!%20%E2%9D%A4%EF%B8%8F%F0%9F%91%8D">
-                    Share likethestuff on Twitter!</a>
-                </p>
-            </div>
-        </div>
-        <div class="frame">
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <img src="https://media.giphy.com/media/uMNLZUzgSsEtq/giphy.gif" alt="">
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <span>This is a tweet haha what lol #2017 #bread</span>
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <span>This is a tweet haha what lol #2017 #bread</span>
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <img src="images/content/1.gif" alt="" about="blank">
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <img src="https://media.giphy.com/media/13gvXfEVlxQjDO/giphy.gif" alt="">
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <img src="https://media.giphy.com/media/l0HlRyxGrLxUXq5KE/giphy.gif" alt="">
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <span>This is a tweet haha what lol #2017 #bread</span>
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <span>This is a tweet haha what lol #2017 #bread</span>
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <span>This is a tweet haha what lol #2017 #bread</span>
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="frame-item">
-                <div class="window">
-                    <div class="header">
-                        <span>username</span>
-                        <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
-                    </div>
-                    <div class="content">
-                        <span>This is a tweet haha what lol #2017 #bread</span>
-                    </div>
-                    <div class="action-panel">
-                        <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
-                        <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="footer nav">
-            <div class="items-left">
-                <a class="description-button">??</a>
-            </div>
-            <div class="items-right">
-                <a class="share-button">share</a>
-            </div>
-        </footer>
     </div>
-    <!-- Javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+<div class="container">
+    <header class="nav">
+        <div class="items-left">
+            <a href=""><img class="logo" src="images/logo-1.svg" alt=""></a>
+        </div>
+        <div class="items-right">
+            <span class="timer">0:30</span>
+            <span class="score">0</span>
+        </div>
+    </header>
+    <div class="modal-container__instructions">
+        <div class="modal">
+            <h1>
+                Like as much stuff as you can before the timer runs out!
+            </h1>
+            <p>
+                If you accidentally like or love an advertisement, you lose points, so be careful what you like!
+            </p>
+            <p class="start"><span>👍 Start Liking! ❤️</span></p>
+        </div>
+    </div>
+    <div class="modal-container__playagain">
+        <div class="modal">
+            <h1>Time's up! You got <i class="end-score">3</i> points!</h1>
+            <p>
+                You can do better, So can your friends!
+            </p>
+            <p class="share-score"><span>🌴 Share your score! 🌈</span></p>
+            <p class="play-again"><span>💰 Play Again! ⚡️</span></p>
+        </div>
+    </div>
+    <div class="modal-container description">
+        <div class="modal">
+            <div class="header">
+                <span>????????????????????</span>
+                <span><img class="close-window close-description" src="images/x.svg" alt="close window"></span>
+            </div>
+            <p>
+                The objective of the game is to like as much content as possible. Loving content gets more points.
+                If you like an advertisement, you lose points. If you love an advertisement, you lose more points.
+                After the timer runs out, share your score with your friends! ✨
+            </p>
+            <p class="small">
+                clickplease.net challenges the unquestioned integration of advertisements within social media feeds.
+                These advertisements are formatted and designed exactly the same as the content that we subscribe to;
+                this strategy is profitable, but also raises questions about this slippery slope.
+            </p>
+            <p>
+                How successfully should sponsored material visually mimic the content that we subscribe to? Should
+                platforms be required to add design elements  to advertisements in order to ensure they are visually
+                different enough than the content we subscribe to? Where do we go from here?
+            </p>
+        </div>
+    </div>
+    <div class="modal-container share">
+        <div class="modal">
+            <div class="header">
+                <span>Tell your friends to like the stuff!</span>
+                <span><img class="close-window close-share" src="images/x.svg" alt="close window"></span>
+            </div>
+            <p>
+                <a target="_blank"
+                href="https://twitter.com/intent/tweet?text=you%20should%20like%20the%20stuff%20at%20http://likethestuff.com!%20%E2%9D%A4%EF%B8%8F%F0%9F%91%8D">
+                &nbsp;&nbsp; 📣 Share on Twitter! 🐦 &nbsp;&nbsp;</a>
+            </p>
+            <p class="fb-share-button" data-href="http://likethestuff.com/" data-layout="button" data-size="small" data-mobile-iframe="true">
+                <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flikethestuff.com%2F&amp;src=sdkpreparse">📣 Share on Facebook! 📘</a>
+            </p>
+        </div>
+    </div>
+    <div class="frame">
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+        <div class="frame-item">
+            <div class="window">
+                <div class="header">
+                    <span>!!!!</span>
+                    <span class="closeparent"><img class="close-window" src="images/x.svg" alt="close window"></span>
+                </div>
+                <div class="content">
+                    <img src="" alt="">
+                </div>
+                <div class="action-panel">
+                    <span class="like closeparent"><img src="images/thumbs-up.svg" alt="thumbs up"></span>
+                    <span class="heart closeparent"><img src="images/heart-empty.svg" alt="heart"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer nav">
+        <div class="items-left">
+            <a class="description-button">??</a>
+        </div>
+        <div class="items-right">
+            <a class="share-button">share</a>
+        </div>
+    </footer>
+</div>
+<!-- Javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -52,29 +52,61 @@
     100% { opacity:0; }
 }
 
+@keyframes oopsAnimation {
+  0%   { opacity:1; }
+  30%  { transform: translateY(50px); }
+  99%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-o-keyframes oopsAnimation{
+    0%   { opacity:1; }
+    30%  { -o-transform: translateY(50px); }
+    99%  { opacity:1; }
+    100% { opacity:0; }
+}
+@-moz-keyframes oopsAnimation{
+    0%   { opacity:1; }
+    30%  { -moz-transform: translateY(50px); }
+    99%  { opacity:1; }
+    100% { opacity:0; }
+}
+@-webkit-keyframes oopsAnimation{
+    0%   { opacity:1; }
+    30%  { -webkit-transform: translateY(50px); }
+    99%  { opacity:1; }
+    100% { opacity:0; }
+}
+
 .like-animation::before,
-.love-animation::before {
+.love-animation::before,
+.oops-animation::before,
+.double-oops-animation::before {
     opacity: 0;
     font-size: 30px;
     font-weight: 700;
     content: "👍 +1";
     position: absolute;
     white-space: nowrap;
-    animation: likeAnimation 1s;
+    animation: likeAnimation 1.2s;
     background-color: #fff;
     border: #000 3px solid;
     padding: 2px 8px;
     box-shadow: 4px 4px 0 #000;
     z-index: 99;
-    opacity: 1;
 }
 
 .love-animation::before {
     content: "+2 💕";
 }
 
-.dislike-animation::before {
+.oops-animation::before {
     content: "💩 -1";
+    animation: oopsAnimation 1.2s;
+}
+
+.double-oops-animation::before {
+    content: "💩 -2";
+    animation: oopsAnimation 1.2s;
 }
 
 /* Like image animation on click*/
@@ -106,4 +138,48 @@
 
 .like-img-animation {
     animation: likeImgAnimation 1s;
+}
+
+/* Like image animation on click*/
+@keyframes oopsParentAnimation {
+  0%   { opacity:1; transform: translateY(300px); margin-left: 30px;}
+  100% { opacity:0; }
+}
+@-o-keyframes oopsParentAnimation {
+    0%   { opacity:1; }
+    30%  { -o-transform: translateY(-100px); }
+    99%  { opacity:1; }
+    100% { opacity:0; }
+}
+@-moz-keyframes oopsParentAnimation {
+    0%   { opacity:1; }
+    30%  { -moz-transform: translateY(-100px); }
+    99%  { opacity:1; }
+    100% { opacity:0; }
+}
+@-webkit-keyframes oopsParentAnimation {
+    0%   { opacity:1; }
+    30%  { -webkit-transform: translateY(-100px); }
+    99%  { opacity:1; }
+    100% { opacity:0; }
+}
+
+.oops-parent-animation {
+    display: none;
+    font-size: 30px;
+    font-weight: 700;
+    position: fixed;
+    white-space: nowrap;
+    background-color: #fff;
+    border: #000 3px solid;
+    padding: 0px 10px;
+    margin-top: 200px;
+    box-shadow: 4px 4px 0 #000;
+    z-index: 99;
+    left: 50%;
+    margin-left: -155px;
+}
+
+.oops-parent-animation p {
+    line-height: 2px;
 }

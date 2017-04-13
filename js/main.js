@@ -14,28 +14,12 @@ $(document).ready(function () {
         "https://media.giphy.com/media/3o6Ztrq2mO37Z4SoPm/giphy.gif",
         "https://media.giphy.com/media/tSsptoBbCdfc4/giphy.gif",
         "https://media.giphy.com/media/l0HlRyxGrLxUXq5KE/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
         "https://media.giphy.com/media/3owyp4lrgQjqeLe0hy/giphy.gif",
         "https://media.giphy.com/media/l0HlRyxGrLxUXq5KE/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
         "https://media.giphy.com/media/3owyp4lrgQjqeLe0hy/giphy.gif",
         "https://media.giphy.com/media/l0HlRyxGrLxUXq5KE/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
         "https://media.giphy.com/media/3owyp4lrgQjqeLe0hy/giphy.gif",
         "https://media.giphy.com/media/l0HlRyxGrLxUXq5KE/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
-        "https://media.giphy.com/media/KbDYCmnzZ2uL6/giphy.gif",
         "https://68.media.tumblr.com/02dd00429079e51a42cd0519c5129541/tumblr_onv3sk8Pr91s60oo7o1_400.gif",
         "https://68.media.tumblr.com/345d54127ac111cfe1b713339ef85eea/tumblr_od0rxjIC8c1rtbl5vo1_500.gif",
         "https://68.media.tumblr.com/afa8e9ad19c9048d175504626e5f21a8/tumblr_o95exrYDKL1s7z2cyo1_500.gif",
@@ -237,21 +221,48 @@ $(document).ready(function () {
         ];
 
     // Generate array full of random numbers
-
-
     var arr = []
-    var random_range = 197
-    while(arr.length < 25){
+    var random_range = 209;
+    while(arr.length < 35){
         var randomnumber = Math.ceil(Math.random()* random_range)
         if(arr.indexOf(randomnumber) > -1) continue;
         arr[arr.length] = randomnumber;
     }
-    console.log(arr);
 
     // Grab links from array and insert into windows
     $( ".frame-item .window .content img" ).each(function( index ) {
-        console.log( index + ": " + content_list[arr[index]]);
         $(this).attr("src", content_list[arr[index]]);
+    });
+
+    // Add and color classes at random
+    var $div = $('.frame-item .window');
+    var $header = $('.frame-item .window .header');
+    for(var i = 0; i < 18; i++) {
+        var random = Math.random();
+        if ( (i % 2) == 0 ) {
+            $div.eq(Math.floor(random*$div.length)).addClass("bg-blue");
+            $header.eq(Math.floor(random*$div.length)).addClass("bg-gradient-blue");
+        } else {
+            $div.eq(Math.floor(random*$div.length)).addClass("bg-yellow");
+            $header.eq(Math.floor(random*$div.length)).addClass("bg-gradient-yellow");
+        }
+    }
+
+    // Generate random advertisements
+    var arrad = []
+    var random_range_ad = 35;
+    var arrad_length = 15;
+    while(arrad.length < arrad_length){
+        var randomnumberad = Math.ceil(Math.random()* random_range_ad)
+        if(arrad.indexOf(randomnumberad) > -1) continue;
+        arrad[arrad.length] = randomnumberad;
+    }
+
+    // Add oops from random array
+    $( ".frame-item .window" ).each(function( index ) {
+        if(jQuery.inArray(index, arrad) !== -1) {
+            $(this).addClass("oops");
+        }
     });
 
     // Add closing animation
@@ -260,6 +271,7 @@ $(document).ready(function () {
         $(this).parent().parent().parent().height(height).animate({ height: 0 }, 700);
         $(this).parent().parent().parent().addClass("frame-item__hide");
     });
+
 
     // Instructions modal, start game
     $(".start").click(function(){
@@ -282,6 +294,7 @@ $(document).ready(function () {
                 clearInterval(timer);
                 $('.timer').text("0:00");
                 $('.end-score').text(icu);
+                $(".score").css("color", "#000");
 
                 // Show share modal
                 $("html, body").toggleClass("overflow");
@@ -292,17 +305,37 @@ $(document).ready(function () {
         // Score
         var icu = 0;
         $(".like").click(function(){
-            icu = icu + 1;
-            $('.score').text(icu);
-            $(this).addClass("like-animation");
-            $(this).find("img").addClass("like-img-animation");
+            if ( $(this).parent().parent().hasClass("oops") ) {
+                icu --;
+                $('.score').text(icu);
+                $(this).addClass("oops-animation");
+                $(".oops-parent-animation").fadeIn(200).delay(500).fadeOut(200);
+                $(".score").css("color", "red");
+                $(this).find("img").addClass("like-img-animation");
+
+            } else {
+                icu = icu + 1;
+                $('.score').text(icu);
+                $(this).addClass("like-animation");
+                $(".score").css("color", "#68dc68");
+                $(this).find("img").addClass("like-img-animation");
+            }
         });
         $(".heart").click(function(){
-            icu = icu + 2;
-            console.log("click");
-            $('.score').text(icu);
-            $(this).addClass("love-animation");
-            $(this).find("img").addClass("like-img-animation");
+            if ( $(this).parent().parent().hasClass("oops") ) {
+                icu = icu - 2;
+                $('.score').text(icu);
+                $(this).addClass("double-oops-animation");
+                $(".score").css("color", "red");
+                $(".oops-parent-animation").fadeIn(100).delay(500).fadeOut(700);
+                $(this).find("img").addClass("like-img-animation");
+            } else {
+                icu = icu + 2;
+                $('.score').text(icu);
+                $(this).addClass("love-animation");
+                $(".score").css("color", "#68dc68");
+                $(this).find("img").addClass("like-img-animation");
+            }
         });
     });
 
@@ -334,21 +367,6 @@ $(document).ready(function () {
     });
 
     // Fade out loading animations
-    $(".loading-splash p").delay(2000).fadeOut(1000);
-    $(".loading-splash").delay(2000).fadeOut(2000);
-
-
-    // Wait for images to load
-    // $(window).on("load", function() {
-    //     //Calculate height of each window for animation
-    //     $( ".frame-item" ).each(function( index ) {
-    //         var height = $(this).height();
-    //         $(this).height(height);
-    //         console.log("dfdfdd");
-    //     });
-    //
-    //     // Fade out loading animations
-    //     $(".loading-splash p").fadeOut(700);
-    //     $(".loading-splash").fadeOut(1300);
-    // });
+    $(".loading-splash p").delay(3000).fadeOut(1000);
+    $(".loading-splash").delay(4000).fadeOut(2000);
 });

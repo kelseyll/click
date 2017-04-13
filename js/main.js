@@ -3,6 +3,20 @@
 
 // Load page
 $(document).ready(function () {
+    // Load Music
+    var goodSound = new buzz.sound("sounds/good", {
+        formats: [ "mp3" ],
+        preload: true,
+        volume: 10
+    });
+
+    var badSound = new buzz.sound("sounds/bad", {
+        formats: [ "mp3" ],
+        preload: true,
+        volume: 40
+    });
+
+
     // Fade out loading animations when page has loaded
     $( "img" ).on( "load", function() {
         $(".loading-splash p").delay(3000).fadeOut(800);
@@ -312,6 +326,7 @@ $(document).ready(function () {
         var icu = 0;
         $(".like").click(function(){
             if ( $(this).parent().parent().hasClass("oops") ) {
+                badSound.play();
                 icu --;
                 $('.score').text(icu);
                 $(this).addClass("oops-animation");
@@ -320,6 +335,7 @@ $(document).ready(function () {
                 $(this).find("img").addClass("like-img-animation");
 
             } else {
+                goodSound.play();
                 icu = icu + 1;
                 $('.score').text(icu);
                 $(this).addClass("like-animation");
@@ -329,6 +345,7 @@ $(document).ready(function () {
         });
         $(".heart").click(function(){
             if ( $(this).parent().parent().hasClass("oops") ) {
+                badSound.play();
                 icu = icu - 2;
                 $('.score').text(icu);
                 $(this).addClass("double-oops-animation");
@@ -336,6 +353,7 @@ $(document).ready(function () {
                 $(".oops-parent-animation").fadeIn(100).delay(500).fadeOut(700);
                 $(this).find("img").addClass("like-img-animation");
             } else {
+                goodSound.play();
                 icu = icu + 2;
                 $('.score').text(icu);
                 $(this).addClass("love-animation");

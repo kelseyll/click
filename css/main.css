@@ -331,7 +331,20 @@ footer a:hover {
 /* Responsive */
 
 @media (max-width: 630px) {
-    .logo {
-        display: none;
+    .container {
+        padding: 0 20px; 
+    }
+    .logo,
+    footer {
+        display: none !important;
+    }
+    h1 {
+        font-size: 28px;
+        line-height: 26px;
+    }
+    p,
+    .modal p {
+        font-size: 18px;
+        line-height: 24px;
     }
 }

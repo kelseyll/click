@@ -54,25 +54,25 @@
 
 @keyframes oopsAnimation {
   0%   { opacity:1; }
-  30%  { transform: translateY(50px); }
+  30%  { transform: translateY(10px); }
   99%  { opacity:1; }
   100% { opacity:0; }
 }
 @-o-keyframes oopsAnimation{
     0%   { opacity:1; }
-    30%  { -o-transform: translateY(50px); }
+    30%  { -o-transform: translateY(10px); }
     99%  { opacity:1; }
     100% { opacity:0; }
 }
 @-moz-keyframes oopsAnimation{
     0%   { opacity:1; }
-    30%  { -moz-transform: translateY(50px); }
+    30%  { -moz-transform: translateY(10px); }
     99%  { opacity:1; }
     100% { opacity:0; }
 }
 @-webkit-keyframes oopsAnimation{
     0%   { opacity:1; }
-    30%  { -webkit-transform: translateY(50px); }
+    30%  { -webkit-transform: translateY(10px); }
     99%  { opacity:1; }
     100% { opacity:0; }
 }
@@ -101,11 +101,13 @@
 
 .oops-animation::before {
     content: "💩 -1";
+    color: red;
     animation: oopsAnimation 1.2s;
 }
 
 .double-oops-animation::before {
     content: "💩 -2";
+    color: red;
     animation: oopsAnimation 1.2s;
 }
 

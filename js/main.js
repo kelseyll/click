@@ -3,6 +3,11 @@
 
 // Load page
 $(document).ready(function () {
+    // Fade out loading animations when page has loaded
+    $( "img" ).on( "load", function() {
+        $(".loading-splash p").delay(3000).fadeOut(800);
+        $(".loading-splash").delay(4000).fadeOut(1000);
+    });
     // Disable scroll for instructions and loading-splash
     $("html, body").toggleClass("overflow");
 
@@ -222,7 +227,8 @@ $(document).ready(function () {
 
     // Generate array full of random numbers
     var arr = []
-    var random_range = 209;
+
+    var random_range = content_list.length;
     while(arr.length < 35){
         var randomnumber = Math.ceil(Math.random()* random_range)
         if(arr.indexOf(randomnumber) > -1) continue;
@@ -365,8 +371,4 @@ $(document).ready(function () {
             $("html, body").toggleClass("overflow");
         }
     });
-
-    // Fade out loading animations
-    $(".loading-splash p").delay(3000).fadeOut(1000);
-    $(".loading-splash").delay(4000).fadeOut(2000);
 });

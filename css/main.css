@@ -327,3 +327,11 @@ footer a:hover {
     background: linear-gradient( 45deg, white, #ace7ef );
     color: #ace7ef;
 }
+
+/* Responsive */
+
+@media (max-width: 630px) {
+    .logo {
+        display: none;
+    }
+}

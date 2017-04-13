@@ -356,4 +356,10 @@ footer a:hover {
         max-width: 330px;
         box-shadow: none;
     }
+    .nav .items-right a, .nav .items-right span {
+        padding-right: 20px;
+    }
+    .nav {
+        font-size: 35px;
+    }
 }
